@@ -1,4 +1,4 @@
-d3.csv("Greenhousegas.csv", function(myData) {
+d3.csv("greenhousegas.csv", function(myData) {
 
   console.log(myData);
 
@@ -42,5 +42,5 @@ d3.csv("Greenhousegas.csv", function(myData) {
           .attr("r", function(d){
             return 100+(d["1991"]*10)
           })
-          
+
 }) //Closes the whole thing
