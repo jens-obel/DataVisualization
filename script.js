@@ -27,9 +27,9 @@ d3.csv("greenhousegas.csv", function(myData) {
     if (min < min2) {min = min} else {min = min2}
     if (max > max2) {max = max} else {max = max2}
 
-    rScale = d3.scale.linear()
-      .domain([min, max])
-      .range([2, 200])
+    // rScale = d3.scale.linear()
+    //   .domain([min, max])
+    //   .range([2, 200])
 
     //Data
     limitedData = [{
