@@ -29,3 +29,8 @@ p {
   font-family: Calibre;
   font-size: 24px;
 }
+
+.dataCircle {
+  cx: 50%;
+  cy: 50%;
+}

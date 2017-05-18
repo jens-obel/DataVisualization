@@ -1,14 +1,13 @@
+var circleStart = 100;
+
 d3.csv("greenhousegas.csv", function(myData) {
 
   console.log(myData);
 
-  //var countryName = myData[1]["Country Name"];
-  //var firstValue = myData[1]["1991"];
+  var limitedData = [{ "Country Name":myData[1]["Country Name"], "1991":myData[1]["1991"], "2011":myData[1]["2011"], }];
 
-  //console.log(countryName);
-  //console.log(firstValue);
-
-  var limitedData = [{"Country Name":myData[1]["Country Name"], "1991":myData[1]["1991"]}];
+  var twotwelve = myData[1]["2011"];
+  console.log(twotwelve)
 
   svgCanvas = d3.select("#visualContainer")
     .append("svg")
@@ -29,18 +28,16 @@ d3.csv("greenhousegas.csv", function(myData) {
   //   .attr("r", 100)
   //   .attr("fill", "pink");
 
-    var myCircles = svgCanvas.selectAll("circle")
-      .data(myData)
-      .enter()
-        .append("circle")
-          .attr("class", "greenhousegas")
-          .attr("stroke", "gray", 20)
-          .attr("stroke-width", 5)
-          .attr("fill", "none")
-          .attr("cx", "50%")
-          .attr("cy", "50%")
-          .attr("r", function(d){
-            return 100+(d["1991"]*10)
-          })
+  var myCircles = svgCanvas.selectAll("circle")
+    .data(myData)
+    .enter()
+      .append("circle")
+        .attr("class", "dataCircle")
+        .attr("stroke", "black")
+        .attr("stroke-width", 2)
+        .attr("fill", "none")
+        .attr("r", function(d){
+          return ((d["1991"]*10) + circleStart)
+        })
 
 }) //Closes the whole thing
