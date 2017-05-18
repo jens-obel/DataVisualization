@@ -1,43 +1,59 @@
 var circleStart = 100;
+var row = 33;
 
 d3.csv("greenhousegas.csv", function(myData) {
 
-  console.log(myData);
+    var limitedData = [{
+        "Country Name": myData[row]["Country Name"],
+        "1991": myData[row]["1991"],
+        "2011": myData[row]["2011"],
+    }];
+    var countryName = myData[row]["Country Name"];
+    var currentYear = myData[row]["2011"];
 
-  var limitedData = [{ "Country Name":myData[1]["Country Name"], "1991":myData[1]["1991"], "2011":myData[1]["2011"], }];
+    console.log(myData);
+    console.log(countryName);
+    console.log(currentYear);
 
-  var twotwelve = myData[1]["2011"];
-  console.log(twotwelve)
+    svgCanvas = d3.select("#visualContainer")
+        .append("svg")
+        .attr("width", "100%")
+        .attr("height", 600);
 
-  svgCanvas = d3.select("#visualContainer")
-    .append("svg")
-    .attr("width", "100%")
-    .attr("height", 600);
+    var text = svgCanvas.selectAll("countryName")
+        .data(limitedData)
+        .enter()
+        .append("text")
+        .attr("class", "textLabel")
+        .attr("x", "50%")
+        .attr("y", 100)
+        .text(countryName)
 
-  // var oneCircle = svgCanvas.append("circle")
-  //   .attr("cx", 380)
-  //   .attr("cy", 280)
-  //   .attr("r", 200)
-  //   .attr("stroke", "gray", 20)
-  //   .attr("stroke-width", 15)
-  //   .attr("fill", "none");
-  //
-  // var twoCircle = svgCanvas.append("circle")
-  //   .attr("cx", 380)
-  //   .attr("cy", 280)
-  //   .attr("r", 100)
-  //   .attr("fill", "pink");
-
-  var myCircles = svgCanvas.selectAll("circle")
-    .data(myData)
-    .enter()
-      .append("circle")
+    var myCircles = svgCanvas.selectAll("ge1990")
+        .data(limitedData)
+        .enter()
+        .append("circle")
         .attr("class", "dataCircle")
         .attr("stroke", "black")
         .attr("stroke-width", 2)
         .attr("fill", "none")
-        .attr("r", function(d){
-          return ((d["1991"]*10) + circleStart)
+        .attr("r", function(d) {
+            return ((d["1991"] * 2) + circleStart)
         })
+
+    var myCirclesTwo = svgCanvas.selectAll("ge2011")
+        .data(limitedData)
+        .enter()
+        .append("circle")
+        .attr("class", "dataCircle")
+        .attr("stroke", "black")
+        .attr("opacity", "0.1")
+        .attr("fill", "black")
+        .attr("r", function(d) {
+            return ((d["2011"] * 2) + circleStart)
+        })
+
+    
+
 
 }) //Closes the whole thing

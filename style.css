@@ -1,36 +1,45 @@
 #visualContainer {
-  position: relative;
-  background-color: #F4F4F4;
-  width:90%;
-  height: 600px;
-  margin: 40px auto 10px auto;
-  border-radius: 5px;
+    position: relative;
+    background-color: #F4F4F4;
+    width: 90%;
+    height: 600px;
+    margin: 40px auto 10px auto;
+    border-radius: 5px;
 }
 
 #header {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #credit {
-  position: relative;
-  margin: 40px auto 10px auto;
-  font-size: 14px;
-  color:#aaa;
+    position: relative;
+    margin: 40px auto 10px auto;
+    font-size: 14px;
+    color: #aaa;
 }
 
 p {
-  text-align: center;
-  font-family: Calibre;
+    text-align: center;
+    font-family: Calibre;
 }
 
 #header p {
-  font-family: Calibre;
-  font-size: 24px;
+    font-family: Calibre;
+    font-size: 24px;
 }
 
 .dataCircle {
-  cx: 50%;
-  cy: 50%;
+    cx: 50%;
+    cy: 50%;
+}
+
+.textLabel {
+    font-family: Calibre;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
 }
