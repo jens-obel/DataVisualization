@@ -42,13 +42,22 @@ d3.csv("GreenhouseGas.csv", function(myData) {
         // console.log(max)
 
         rScale = d3.scaleLinear()
-            .domain([-36, 220])
+            .domain([-80, 220])
             .range([10, 460])
 
         svgCanvas = d3.select("#visualContainer")
             .append("svg")
             .attr("width", "100%")
             .attr("height", 600);
+        svgCanvas.append("circle")
+            .attr("class","forestMin")
+            .attr("cx", width/2)
+            .attr("cy", height/2)
+            .attr("r", rScale(0))
+            .attr("fill", "none")
+            .attr("stroke", "black")
+            // .attr("stroke", "dashed")
+            .attr("opacity", 0.3);
 
             $(document).keydown(function(e) {
                 // $(this).hide();
@@ -181,6 +190,7 @@ function drawLabels(myData, x) {
     d3.selectAll(".textLabel").remove();
     d3.selectAll(".yearLabel").remove();
     d3.selectAll(".percentLabel").remove();
+    d3.selectAll(".smallLabel").remove();
 
     labels.enter()
         .append("text")
@@ -197,5 +207,14 @@ function drawLabels(myData, x) {
         .attr("x", "50%")
         .attr("y", "55%")
         .text(years + x);
+
+    labels.enter()
+        .append("text")
+        .attr("class", "smallLabel")
+        .attr("id", "year")
+        .attr("x", "62.5%")
+        .attr("y", "50%")
+        .attr("opacity", 0.35)
+        .text("Zero %");
 
 }
