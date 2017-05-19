@@ -148,6 +148,16 @@ function drawCircles(myData, x, className) {
             return rScale(d.oneYear)
         })
 
+    // var rSize = (function(d) {
+    //         return rScale(d.oneYear)
+    //       });
+    //
+    // if (rSize<5) {
+    //       rSize = 5
+    //     }
+
+    console.log(rSize);
+
     myCircles.enter()
         .append("circle")
         .attr("cx", 380)
@@ -155,15 +165,9 @@ function drawCircles(myData, x, className) {
         .attr("class", "greenhousegas " + className)
         // .attr("stroke-width", 15)
         // .attr("fill", "none")
-        .attr("r", function(d) {
-            return rScale(d.oneYear)
-
-            if (rScale(d.oneYear)<5) {
-              rScale(d.oneYear) = 5
-              console.log(rScale(d.oneYear));
-            }
-
-        });
+        .attr("r", (function(d) {
+                return rScale(d.oneYear)
+              }););
 }
 
 function drawLabels(myData, x) {
