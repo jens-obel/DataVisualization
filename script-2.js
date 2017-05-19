@@ -215,6 +215,6 @@ function drawLabels(myData, x) {
         .attr("x", "61.5%")
         .attr("y", "50%")
         .attr("opacity", 0.35)
-        .text("Zero percent change");
+        .text("1990");
 
 }
