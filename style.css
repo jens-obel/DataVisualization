@@ -1,50 +1,111 @@
-#visualContainer {
-    position: relative;
-    background-color: #F4F4F4;
-    width: 90%;
-    height: 600px;
-    margin: 40px auto 10px auto;
-    border-radius: 5px;
-}
+    @font-face {
+        font-family: 'Akkurat Mono';
+        src: url('Brown-Regular.otf');
+      }
 
-#header {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-}
+    #visualContainer {
+        position: relative;
+        background-color: #F7F6F2;
+        width: 90%;
+        height: 600px;
+        margin: 20px auto 10px auto;
+        border-radius: 5px;
+    }
 
-#credit {
-    position: relative;
-    margin: 40px auto 10px auto;
-    font-size: 14px;
-    color: #aaa;
-}
+    #header {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+    }
 
-p {
-    text-align: center;
-    font-family: Calibre;
-}
+    #credit p {
+        position: relative;
+        margin: 20px auto 40px auto;
+        font-size: 16px;
+        color: #444444;
+    }
 
-#header p {
-    font-family: Calibre;
-    font-size: 24px;
-}
+    p {
+        text-align: center;
+        font-family: Akkurat Mono;
+        font-size: 13px;
+        line-height: 22px;
+    }
 
-.dataCircle {
-    cx: 50%;
-    cy: 50%;
-}
+    #header p {
+        font-family: Century;
+        font-size: 16px;
+        color: #9B9B9B;
+    }
 
-.textLabel {
-    font-family: Calibre;
-    font-size: 24px;
-    text-align: center;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-}
+    .dataCircle {
+        cx: 50%;
+        cy: 50%;
+    }
 
-circle {
-  cx: 50%;
-  cy: 50%;
-}
+    .textLabel {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        font-family: Century;
+        font-size: 20px;
+        text-align: center;
+        text-anchor: middle;
+    }
+
+    .yearLabel {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        font-family: Century;
+        font-size: 32px;
+        text-align: center;
+        text-anchor: middle;
+    }
+
+    #labelGreen {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        top: 0px;
+        width: 320px;
+        height: 40px;
+        margin: 20px auto 10px auto;
+        color: red;
+    }
+
+    #labelForest {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        bottom: 0px;
+        width: 250px;
+        height: 40px;
+        margin: 20px auto 30px auto;
+        color: green;
+        opacity: 0.75;
+    }
+
+    circle {
+        cx: 50%;
+        cy: 50%;
+    }
+
+    .circle1 {
+        stroke: red;
+        fill: none;
+        stroke-width: 1.5;
+    }
+
+    .circle2 {
+        fill: green;
+        opacity: 0.2;
