@@ -212,9 +212,9 @@ function drawLabels(myData, x) {
         .append("text")
         .attr("class", "smallLabel")
         .attr("id", "year")
-        .attr("x", "62.5%")
+        .attr("x", "61.5%")
         .attr("y", "50%")
         .attr("opacity", 0.35)
-        .text("Zero %");
+        .text("Zero percent change");
 
 }
